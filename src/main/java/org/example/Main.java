@@ -1,17 +1,28 @@
 package org.example;
 
+import org.example.model.*;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Text text = new Text(100, "./home/docs", "LORE IPSUM");
+        Image image = new Image(100, "./home/docs", 20, 90);
+        Text text2 = new Text(250, "./home/docs/nota.txt", "Este es un ejemplo de texto");
+        Image image2 = new Image(500, "./home/images/foto.png", 800, 600);
+        Text text3 = new Text(150, "./home/docs/resumen.txt", "Resumen del proyecto");
+        Audio audio1 = new Audio(3000, "./home/music/cancion.mp3", 180); // duración en segundos
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+
+        text.open();
+        image.open();
+
+        Text[] texts = new Text[3];
+        texts[1] = text;
+        texts[2] = text2;
+        texts[3] = text3;
+
+        Program program = new Program("Txt", texts);
+        program.execute("./Home/Doc/Examen");
     }
 }

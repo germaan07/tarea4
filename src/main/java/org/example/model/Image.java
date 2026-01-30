@@ -4,12 +4,18 @@ import lombok.Data;
 
 @Data
 public class Image extends Archivo{
+    private int width;
     private int height;
-    private int broad;
 
-    public Image(int size, String path, int height, int broad) {
+    public Image(int size, String path, int width, int height) {
         super(size, path);
+        this.width = width;
         this.height = height;
-        this.broad = broad;
+    }
+
+    public void open(){
+        super.open();
+        System.out.println("ALTURA: " + width);
+        System.out.println("ANCHURA: " + height);
     }
 }
