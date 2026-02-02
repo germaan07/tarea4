@@ -10,13 +10,18 @@ public abstract class Archivo{
     protected int size;
     protected String path;
 
-    public void open(){
+    public Archivo(int size, String path) {
+        this.size = size;
+        this.path = path;
+    }
+
+    protected void open(){
         System.out.println("NOMBRE: ");
         System.out.println("TAMAÑO: " + size);
         System.out.println("RUTA: " + path);
     }
 
-    public void move(String newPath){
+    protected void move(String newPath){
         if (path.equals(newPath)){
             System.out.println("No hay cambios.");
         } else {
